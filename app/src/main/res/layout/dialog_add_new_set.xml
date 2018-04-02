@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="450dp"
+              android:weightSum="10"
+                style="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+
+        <TextView
+                android:text="@string/lb_choose_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="30sp"
+                android:id="@+id/textView3"/>
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_backspace"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ibt_dismiss"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/new_folder"
+                android:layout_centerVertical="true"
+                android:id="@+id/lb_new_folder"
+                style="@style/label_add_new_card"/>
+        <ToggleButton
+                android:id="@+id/bt_toggle_new_folder"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/lb_new_folder"
+                android:layout_toRightOf="@+id/lb_new_folder"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/edittext_holder"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/lb_folder"
+                android:layout_centerVertical="true"
+                android:id="@+id/lb_folder_text"
+                style="@style/label_add_new_card"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_folder"
+                android:layout_centerVertical="true"
+                android:spinnerMode="dialog"
+                android:layout_toRightOf="@+id/lb_folder_text"
+                android:layout_toEndOf="@+id/lb_folder_text"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/spinner_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_folder"
+                android:layout_centerVertical="true"
+                android:spinnerMode="dialog"
+                android:layout_toRightOf="@+id/lb_folder_spinner"
+                android:layout_toEndOf="@+id/lb_folder_spinner"/>
+
+        <TextView
+                android:text="@string/lb_folder"
+                android:layout_centerVertical="true"
+                android:id="@+id/lb_folder_spinner"
+                style="@style/label_add_new_card"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        <Button
+                android:id="@+id/btSaveCardSet"
+                android:text="@string/bt_create_new_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</LinearLayout>

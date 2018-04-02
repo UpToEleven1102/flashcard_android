@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="10"
+              style="@style/Theme.AppCompat.Light.NoActionBar">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        <TextView
+                android:text="@string/new_card_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="30sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <TextView
+                android:text="@string/lb_folder"
+                android:layout_centerVertical="true"
+                android:id="@+id/lb_folder"
+                style="@style/label_add_new_card"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <EditText
+                android:id="@+id/card_set_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lb_card_set_name"
+                style="@style/label_add_new_card"/>
+        <EditText
+                android:id="@+id/card_set_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_card_set_description"
+                style="@style/label_add_new_card"
+                android:layout_below="@+id/card_set_name"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_weight="7">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/cards_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        <Button
+                android:text="@string/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_cancel_add_set"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:onClick="cancel"/>
+
+        <Button
+                android:id="@+id/btSaveCardSet"
+                android:text="@string/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/bt_cancel_add_set"
+                android:layout_toStartOf="@+id/bt_cancel_add_set"/>
+
+        <Button
+                android:text="@string/lb_new_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btNewCard"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/btSaveCardSet"
+                android:layout_toStartOf="@+id/btSaveCardSet"/>
+    </RelativeLayout>
+</LinearLayout>
